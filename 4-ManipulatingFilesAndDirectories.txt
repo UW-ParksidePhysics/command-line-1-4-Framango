@@ -1,1 +1,140 @@
 
+root@DESKTOP-Q35HTN1:~# cp -u *.html /usr/bin
+cp: cannot stat '*.html': No such file or directory
+root@DESKTOP-Q35HTN1:~# mkdir Paul ..
+mkdir: cannot create directory ‘..’: File exists
+root@DESKTOP-Q35HTN1:~# mkdir Paul
+mkdir: cannot create directory ‘Paul’: File exists
+root@DESKTOP-Q35HTN1:~# ls
+Paul
+root@DESKTOP-Q35HTN1:~# cp name of file
+cp: target 'file' is not a directory
+root@DESKTOP-Q35HTN1:~# rm Paul
+rm: cannot remove 'Paul': Is a directory
+root@DESKTOP-Q35HTN1:~# cd /usr
+root@DESKTOP-Q35HTN1:/usr# ls
+bin  config  games  include  lib  lib32  lib64  libexec  libx32  local  sbin  share  src
+root@DESKTOP-Q35HTN1:/usr# local
+-bash: local: can only be used in a function
+root@DESKTOP-Q35HTN1:/usr# cd /local
+-bash: cd: /local: No such file or directory
+root@DESKTOP-Q35HTN1:/usr# cd ./local
+root@DESKTOP-Q35HTN1:/usr/local# ls
+bin  etc  games  include  lib  man  sbin  share  src
+root@DESKTOP-Q35HTN1:/usr/local# cd ./bin
+root@DESKTOP-Q35HTN1:/usr/local/bin# ls
+root@DESKTOP-Q35HTN1:/usr/local/bin# ls -l
+total 0
+root@DESKTOP-Q35HTN1:/usr/local/bin# cd ..
+root@DESKTOP-Q35HTN1:/usr/local# cd ./lib
+root@DESKTOP-Q35HTN1:/usr/local/lib# ls
+python3.8
+root@DESKTOP-Q35HTN1:/usr/local/lib# cd ..
+root@DESKTOP-Q35HTN1:/usr/local# cd ./games
+root@DESKTOP-Q35HTN1:/usr/local/games# ls
+root@DESKTOP-Q35HTN1:/usr/local/games# cd ./man
+-bash: cd: ./man: No such file or directory
+root@DESKTOP-Q35HTN1:/usr/local/games# cd ..
+root@DESKTOP-Q35HTN1:/usr/local# cd ./man
+root@DESKTOP-Q35HTN1:/usr/local/man# ls
+root@DESKTOP-Q35HTN1:/usr/local/man# cd /usr
+root@DESKTOP-Q35HTN1:/usr# ls
+bin  config  games  include  lib  lib32  lib64  libexec  libx32  local  sbin  share  src
+root@DESKTOP-Q35HTN1:/usr# lib32
+lib32: command not found
+root@DESKTOP-Q35HTN1:/usr# ./lib32
+-bash: ./lib32: Is a directory
+root@DESKTOP-Q35HTN1:/usr# lib
+
+Command 'lib' not found, did you mean:
+
+  command 'slib' from deb slib (3b1-5)
+  command 'ldb' from deb rocksdb-tools (5.17.2-3)
+  command 'lie' from deb lie (2.2.2+dfsg-3build1)
+  command 'lid' from deb id-utils (4.6+git20120811-4ubuntu2)
+  command 'lix' from deb lix (0.9.29-1build2)
+  command 'lb' from deb live-build (3.0~a57-1ubuntu38.20.04.2)
+  command 'lb' from deb open-infrastructure-system-build (20190301-lts1-2)
+
+Try: apt install <deb name>
+
+root@DESKTOP-Q35HTN1:/usr# cd
+root@DESKTOP-Q35HTN1:~# mkdir playground
+root@DESKTOP-Q35HTN1:~# cd playground
+root@DESKTOP-Q35HTN1:~/playground# mkdir dir1 dir2
+root@DESKTOP-Q35HTN1:~/playground# cp /etc/passwd .
+root@DESKTOP-Q35HTN1:~/playground# ls -l
+total 12
+drwxr-xr-x 2 root root 4096 Feb  7 16:43 dir1
+drwxr-xr-x 2 root root 4096 Feb  7 16:43 dir2
+-rw-r--r-- 1 root root 1593 Feb  7 16:44 passwd
+root@DESKTOP-Q35HTN1:~/playground# cp -v /etc/passwd .
+'/etc/passwd' -> './passwd'
+root@DESKTOP-Q35HTN1:~/playground# mv passwd fun
+root@DESKTOP-Q35HTN1:~/playground# mv fun dir1
+root@DESKTOP-Q35HTN1:~/playground# mv dir1/fun dir2
+root@DESKTOP-Q35HTN1:~/playground# mv dir2/fun .
+root@DESKTOP-Q35HTN1:~/playground# mv fun dir1
+root@DESKTOP-Q35HTN1:~/playground# mv dir1 dir2
+root@DESKTOP-Q35HTN1:~/playground# ls -l dir2
+total 4
+drwxr-xr-x 2 root root 4096 Feb  7 16:46 dir1
+root@DESKTOP-Q35HTN1:~/playground# ls -l dir2/dir1
+total 4
+-rw-r--r-- 1 root root 1593 Feb  7 16:44 fun
+root@DESKTOP-Q35HTN1:~/playground# mv dir2/dir1 .
+root@DESKTOP-Q35HTN1:~/playground# mv dir1/fun .
+root@DESKTOP-Q35HTN1:~/playground# ln fun fun-hard
+root@DESKTOP-Q35HTN1:~/playground# ln fun dir1/fun-hard
+root@DESKTOP-Q35HTN1:~/playground# ln fun dir2/fun-hard
+root@DESKTOP-Q35HTN1:~/playground# ls -l
+total 16
+drwxr-xr-x 2 root root 4096 Feb  7 16:48 dir1
+drwxr-xr-x 2 root root 4096 Feb  7 16:49 dir2
+-rw-r--r-- 4 root root 1593 Feb  7 16:44 fun
+-rw-r--r-- 4 root root 1593 Feb  7 16:44 fun-hard
+root@DESKTOP-Q35HTN1:~/playground# ls -li
+total 16
+40753 drwxr-xr-x 2 root root 4096 Feb  7 16:48 dir1
+40754 drwxr-xr-x 2 root root 4096 Feb  7 16:49 dir2
+40755 -rw-r--r-- 4 root root 1593 Feb  7 16:44 fun
+40755 -rw-r--r-- 4 root root 1593 Feb  7 16:44 fun-hard
+root@DESKTOP-Q35HTN1:~/playground# ln -s fun fun-sym
+root@DESKTOP-Q35HTN1:~/playground# ln -s ../fun dir1/fun-sym
+root@DESKTOP-Q35HTN1:~/playground# ln -s ../fun dir2/fun-sym
+root@DESKTOP-Q35HTN1:~/playground# ls -l dir1
+total 4
+-rw-r--r-- 4 root root 1593 Feb  7 16:44 fun-hard
+lrwxrwxrwx 1 root root    6 Feb  7 16:50 fun-sym -> ../fun
+root@DESKTOP-Q35HTN1:~/playground# ln -s dir1 dir1-sym
+root@DESKTOP-Q35HTN1:~/playground# ls -l
+total 16
+drwxr-xr-x 2 root root 4096 Feb  7 16:50 dir1
+lrwxrwxrwx 1 root root    4 Feb  7 16:51 dir1-sym -> dir1
+drwxr-xr-x 2 root root 4096 Feb  7 16:50 dir2
+-rw-r--r-- 4 root root 1593 Feb  7 16:44 fun
+-rw-r--r-- 4 root root 1593 Feb  7 16:44 fun-hard
+lrwxrwxrwx 1 root root    3 Feb  7 16:50 fun-sym -> fun
+root@DESKTOP-Q35HTN1:~/playground# rm fun-hard
+root@DESKTOP-Q35HTN1:~/playground# ls -l
+total 12
+drwxr-xr-x 2 root root 4096 Feb  7 16:50 dir1
+lrwxrwxrwx 1 root root    4 Feb  7 16:51 dir1-sym -> dir1
+drwxr-xr-x 2 root root 4096 Feb  7 16:50 dir2
+-rw-r--r-- 3 root root 1593 Feb  7 16:44 fun
+lrwxrwxrwx 1 root root    3 Feb  7 16:50 fun-sym -> fun
+root@DESKTOP-Q35HTN1:~/playground# rm -i fun
+rm: remove regular file 'fun'? y
+root@DESKTOP-Q35HTN1:~/playground# ls
+dir1  dir1-sym  dir2  fun-sym
+root@DESKTOP-Q35HTN1:~/playground# less fun-sym
+fun-sym: No such file or directory
+root@DESKTOP-Q35HTN1:~/playground# rm fun-sym dir-sym
+rm: cannot remove 'dir-sym': No such file or directory
+root@DESKTOP-Q35HTN1:~/playground# rm fun-sym dir1-sym
+rm: cannot remove 'fun-sym': No such file or directory
+root@DESKTOP-Q35HTN1:~/playground# ls
+dir1  dir2
+root@DESKTOP-Q35HTN1:~/playground# cd
+root@DESKTOP-Q35HTN1:~# rm -r playground
+root@DESKTOP-Q35HTN1:~#
