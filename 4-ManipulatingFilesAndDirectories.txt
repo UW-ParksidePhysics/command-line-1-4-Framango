@@ -1,3 +1,4 @@
+#Concepts Adressed;Directory, Redirection, file permission
 
 root@DESKTOP-Q35HTN1:~# cp -u *.html /usr/bin
 cp: cannot stat '*.html': No such file or directory
