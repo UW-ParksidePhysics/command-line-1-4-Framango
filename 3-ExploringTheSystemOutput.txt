@@ -1,1 +1,21 @@
 
+root@DESKTOP-Q35HTN1:~# ls
+root@DESKTOP-Q35HTN1:~# ls /usr
+bin  config  games  include  lib  lib32  lib64  libexec  libx32  local  sbin  share  src
+root@DESKTOP-Q35HTN1:~# ls ~/usr
+ls: cannot access '/root/usr': No such file or directory
+root@DESKTOP-Q35HTN1:~# ls ~ /usr
+/root:
+
+/usr:
+bin  config  games  include  lib  lib32  lib64  libexec  libx32  local  sbin  share  src
+root@DESKTOP-Q35HTN1:~# ls -l
+total 0
+root@DESKTOP-Q35HTN1:~# ls -lt
+total 0
+root@DESKTOP-Q35HTN1:~# ls -lt -r
+total 0
+root@DESKTOP-Q35HTN1:~# file /bin/host
+/bin/host: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=df38a85a1026fe2242256e711dbee1851fc63192, for GNU/Linux 3.2.0, stripped
+root@DESKTOP-Q35HTN1:~# less /etc/passwd
+root@DESKTOP-Q35HTN1:~#
