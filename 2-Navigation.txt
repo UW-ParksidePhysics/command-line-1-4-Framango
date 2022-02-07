@@ -1,3 +1,4 @@
+#Concepts Adressed;Shell, directory, redirection
 
 root@DESKTOP-Q35HTN1:~# pwd
 /root
